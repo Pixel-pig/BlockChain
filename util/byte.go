@@ -9,7 +9,7 @@ import (
 )
 
 // int64 转为 []byte
-func Int64ToBytes(i int64) ([]byte) {
+func Int64ToBytes(i int64) []byte {
 	// 1.开辟一个 buff 缓存区
 	buf := bytes.NewBuffer([]byte{})
 	// 2.大端写入数据
@@ -20,7 +20,6 @@ func Int64ToBytes(i int64) ([]byte) {
 	}
 	// 3.导出数据
 	return buf.Bytes()
-
 }
 
 // string 转为 []byte
