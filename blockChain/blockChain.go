@@ -3,7 +3,7 @@
 package blockChain
 
 import (
-	"blockChainProject/util"
+	"blockChainProject/errorPk"
 	"fmt"
 	"github.com/bolt"
 )
@@ -31,7 +31,7 @@ const (
 var BUCKETNAME = []byte("blockchain")
 
 //实例化一条区块链
-func NewBlockChain() *BlockChain {
+func NewBlockChain() (*BlockChain, error) {
 	var bc BlockChain
 	//1.拿到BlotDB链接
 	db, err := bolt.Open(BOLTDBFILENAME, 0600, nil)
@@ -39,42 +39,44 @@ func NewBlockChain() *BlockChain {
 		panic("bolt数据库创建失败！")
 	}
 
-	//2.创建创世区块
-	genesisBlock := NewGenesisBlock()
-
-	//3.将创世区块添加到区块链上
-	_ = db.Update(func(tx *bolt.Tx) error {
+	//2.判断boltDB文件中是否存在数据表
+	err = db.Update(func(tx *bolt.Tx) error {
 		//3.1 判断DB文件中是否存在BUCKETNAME文件，不存在则创建该问件
 		bucket := tx.Bucket(BUCKETNAME)
 		if bucket == nil {
 			//DB文件中不存在BUCKETNAME数据表
-			bucket, err := tx.CreateBucket(BUCKETNAME)
+			_, err := tx.CreateBucket(BUCKETNAME)
 			if err != nil {
-				panic("创建数据表失败。")
+				return err
 			}
-			//将序列化后的创世区块添加到数据表中
-			genesisBlockBytes, err := genesisBlock.Serialize()
-			if err != nil {
-				panic("序列化失败")
+			//创建创世区块
+			genesisBlock := NewGenesisBlock()
+			//区块上链
+			bc.SaveBlock(genesisBlock)
+		} else {
+			//DB文件中存在BUCKETNAME数据表,查看数据表是否存在创世区块，不存在则添加创世区块，存在测退出
+			//利用最后一个lastkey去判断数据表中是否存在数据
+			lastHash := bucket.Get([]byte(LASTKEY))
+			if lastHash == nil {
+				//不存在创世区块,创建创世区块并存入到区块链上
+				genesisBlock := NewGenesisBlock()
+				_, err := bc.SaveBlock(genesisBlock)
+				if err != nil {
+					return err
+				}
+			} else{
+				//存在创世,拿到创世区块的值
+				return errorPk.ISEMPTY()
 			}
-			_ = bc.upDataLastHash(bucket, genesisBlock, genesisBlockBytes)
-		}
-		//DB文件中存在BUCKETNAME数据表,查看数据表是否存在创世区块，不存在则添加创世区块，存在测退出
-		blockBytes := bucket.Get(genesisBlock.Hash)
-		if blockBytes == nil {
-			//不存在创世区块,将创世区块存入到区块链上
-			genesisBlockBytes, _ := genesisBlock.Serialize()
-			_ = bc.upDataLastHash(bucket, genesisBlock, genesisBlockBytes)
 		}
 		return nil
 	})
 	//4. 实例化一条区块链
 	bc = BlockChain{
 		BoltDB:   db,
-		LastHash: genesisBlock.Hash,
 	}
 
-	return &bc
+	return &bc, err
 }
 
 //存储block
@@ -87,18 +89,21 @@ func (bc BlockChain) SaveBlock(block Block) (*Block, error) {
 		//判断数据表中是否存在该区块
 		thisBlockByte := bucket.Get(block.Hash)
 		if thisBlockByte != nil {
-			return util.ALREADYEXISTS()
+			return errorPk.ALREADYEXISTS()
 		}
 		//3.将block数据序列化
 		blockByte, err := block.Serialize()
 		if err != nil {
-			return err
+			return errorPk.SERIALIZATIONFAILED()
 		}
 		//4.将数据添加block链上，并更新lastkey中的数据
-		err = bc.upDataLastHash(bucket, block, blockByte)
+		err = bucket.Put(block.Hash,blockByte)
 		if err != nil {
+			fmt.Println("数据上链失败")
 			return err
 		}
+		_ = bucket.Put([]byte(LASTKEY),block.Hash)
+		bc.LastHash = block.Hash
 		return nil
 	})
 	return &block, err
@@ -156,9 +161,3 @@ func (bc BlockChain) QuaryAllBlock() []*Block {
 	return blocks
 }
 
-//更新lasthash的数据
-func (bc BlockChain) upDataLastHash(bucket *bolt.Bucket, block Block, blockBytes []byte) error {
-	err := bucket.Put(block.Hash, blockBytes)
-	err = bucket.Put([]byte(LASTKEY), bc.LastHash)
-	return err
-}
