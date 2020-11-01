@@ -6,6 +6,7 @@ import (
 	"blockChainProject/errorPk"
 	"fmt"
 	"github.com/bolt"
+	"math/big"
 )
 
 /**
@@ -38,6 +39,7 @@ func NewBlockChain() (*BlockChain, error) {
 	if err != nil {
 		panic("bolt数据库创建失败！")
 	}
+	bc.BoltDB = db
 
 	//2.判断boltDB文件中是否存在数据表
 	err = db.Update(func(tx *bolt.Tx) error {
@@ -45,36 +47,43 @@ func NewBlockChain() (*BlockChain, error) {
 		bucket := tx.Bucket(BUCKETNAME)
 		if bucket == nil {
 			//DB文件中不存在BUCKETNAME数据表
-			_, err := tx.CreateBucket(BUCKETNAME)
+			bucket, err := tx.CreateBucket(BUCKETNAME)
 			if err != nil {
 				return err
 			}
 			//创建创世区块
 			genesisBlock := NewGenesisBlock()
 			//区块上链
-			bc.SaveBlock(genesisBlock)
+			//创世区块序列化
+			genesisBlockBytes, _ := genesisBlock.Serialize()
+			bucket.Put(genesisBlock.Hash, genesisBlockBytes)
+			//存入lastHash
+			bucket.Put([]byte(LASTKEY), genesisBlock.Hash)
+			bc.LastHash = genesisBlock.Hash
 		} else {
 			//DB文件中存在BUCKETNAME数据表,查看数据表是否存在创世区块，不存在则添加创世区块，存在测退出
 			//利用最后一个lastkey去判断数据表中是否存在数据
 			lastHash := bucket.Get([]byte(LASTKEY))
 			if lastHash == nil {
 				//不存在创世区块,创建创世区块并存入到区块链上
+				//创建创世区块
 				genesisBlock := NewGenesisBlock()
-				_, err := bc.SaveBlock(genesisBlock)
-				if err != nil {
-					return err
-				}
-			} else{
+				//区块上链
+				//创世区块序列化
+				genesisBlockBytes, _ := genesisBlock.Serialize()
+				bucket.Put(genesisBlock.Hash, genesisBlockBytes)
+				//存入lastHash
+				bucket.Put([]byte(LASTKEY), genesisBlock.Hash)
+				bc.LastHash = genesisBlock.Hash
+			} else {
 				//存在创世,拿到创世区块的值
+				bc.LastHash = lastHash
 				return errorPk.ISEMPTY()
 			}
 		}
+
 		return nil
 	})
-	//4. 实例化一条区块链
-	bc = BlockChain{
-		BoltDB:   db,
-	}
 
 	return &bc, err
 }
@@ -88,24 +97,34 @@ func (bc BlockChain) SaveBlock(block Block) (*Block, error) {
 		bucket := tx.Bucket(BUCKETNAME)
 		//判断数据表中是否存在该区块
 		thisBlockByte := bucket.Get(block.Hash)
-		if thisBlockByte != nil {
+		if thisBlockByte == nil {
+			//该区块不存在
+			//3.将block数据序列化
+			blockByte, err := block.Serialize()
+			if err != nil {
+				return errorPk.SERIALIZATIONFAILED()
+			}
+			//4.将数据添加到区块链上，并更新lastkey中的数据
+			err = bucket.Put(block.Hash, blockByte)
+			if err != nil {
+				fmt.Println("数据上链失败")
+				return err
+			}
+			//更新lasthash
+			err = bucket.Put([]byte(LASTKEY), block.Hash)
+			if err != nil {
+				fmt.Println("数据上链失败")
+				return err
+			}
+			bc.LastHash = block.Hash
+		} else {
 			return errorPk.ALREADYEXISTS()
 		}
-		//3.将block数据序列化
-		blockByte, err := block.Serialize()
-		if err != nil {
-			return errorPk.SERIALIZATIONFAILED()
-		}
-		//4.将数据添加block链上，并更新lastkey中的数据
-		err = bucket.Put(block.Hash,blockByte)
-		if err != nil {
-			fmt.Println("数据上链失败")
-			return err
-		}
-		_ = bucket.Put([]byte(LASTKEY),block.Hash)
-		bc.LastHash = block.Hash
 		return nil
 	})
+	if err != nil {
+		return nil, err
+	}
 	return &block, err
 }
 
@@ -139,25 +158,29 @@ func (bc BlockChain) QuaryAllBlock() []*Block {
 	//var bigInt = new(big.Int)
 	//存储所遍历到的所有区块
 	blocks := make([]*Block, 0)
-	_ = db.View(func(tx *bolt.Tx) error {
-		//拿到存储数据的数据表
+	db.View(func(tx *bolt.Tx) error {
 		bucket := tx.Bucket(BUCKETNAME)
-		//对数据表进行遍历
-		_ = bucket.ForEach(func(k, v []byte) error {
-			fmt.Println("k=",string(k),"v=",string(v))
-			//key := bigInt.SetBytes(k)
-			//lastKey := bigInt.SetBytes([]byte(LASTKEY))
-			//if key.Cmp(lastKey) != 0 {
-			//	//反序列化
-			//	block1, _ := DeSerialize(v)
-			//	fmt.Println("k=",k,"v=",block1)
-			//	blocks = append(blocks, block1)
-			//}
+		if bucket == nil {
+			panic("查询数据出错")
+		}
+		eachKey := bc.LastHash
+		preHashBig := new(big.Int)
+		zeroBig := big.NewInt(0) //0的大整数
+		for {
+			eachBlockBytes := bucket.Get(eachKey)
+			//反序列化以后得到的每一个区块
+			eachBlock, _ := DeSerialize(eachBlockBytes)
+			//将遍历到每一个区块结构体指针放入到[]byte容器中
+			blocks = append(blocks, eachBlock)
 
-			return nil
-		})
+			preHashBig.SetBytes(eachBlock.PrevHash)
+			if preHashBig.Cmp(zeroBig) == 0 { //通过if条件语句判断区块链遍历是否已到创世区块，如果到创世区块，跳出循环
+				break
+			}
+			//否则，继续向前遍历
+			eachKey = eachBlock.PrevHash
+		}
 		return nil
 	})
 	return blocks
 }
-
