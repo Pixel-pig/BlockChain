@@ -1,11 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="521cbbeb-c707-4fe2-a20b-b50dd99d2ec8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blockChain/blockChain.go" beforeDir="false" afterPath="$PROJECT_DIR$/blockChain/blockChain.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blockchain.db" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+    <list default="true" id="ae474be3-8737-4495-8f36-1124bdaa9aaa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/DaraCertProject/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DaraCertProject/controllers/upload.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DaraCertProject/models/blockInfo.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DaraCertProject/static/js/BQNotarization-8b06e.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DaraCertProject/static/js/CertificateMonitor-f4dff.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DaraCertProject/static/js/LawAnd-bde3c.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DaraCertProject/static/js/MobileEvidence-0967f.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DaraCertProject/static/js/ProgressEvidence-9c5b1.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DaraCertProject/static/js/Setting-4599a.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DaraCertProject/static/js/UrlEvidence-8ea17.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DaraCertProject/static/js/UserAttAdd-ab4c6.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DaraCertProject/static/js/UserAttList-538b0.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DaraCertProject/static/js/UserChart-515e7.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DaraCertProject/static/js/set-cookies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DaraCertProject/uilt/hex.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DaraCertProject/views/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BeeGoProjet_v1.0.0/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/BeeGoProjet_v1.0.0/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BeeGoProjet_v1.0.0/controllers/default.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/BeeGoProjet_v1.0.0/controllers/default.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BeeGoProjet_v1.0.0/controllers/registerControllers.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/BeeGoProjet_v1.0.0/controllers/registerControllers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BeeGoProjet_v1.0.0/db_mysql/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/BeeGoProjet_v1.0.0/db_mysql/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaraCertProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaraCertProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaraCertProject/controllers/login.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaraCertProject/controllers/register.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaraCertProject/controllers/register.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaraCertProject/controllers/sgin_in.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaraCertProject/controllers/sgin_in.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaraCertProject/models/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaraCertProject/models/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaraCertProject/routers/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaraCertProject/routers/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaraCertProject/static/css/common-f03c3be68c19ce58d4ff.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaraCertProject/static/css/common-f03c3be68c19ce58d4ff.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaraCertProject/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaraCertProject/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaraCertProject/static/js/b.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaraCertProject/static/js/b.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaraCertProject/views/index.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaraCertProject/views/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaraCertProject/views/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaraCertProject/views/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaraCertProject/views/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cloudChat/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloudChat/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github.com/astaxie/beego/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/src/github.com/astaxie/beego/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github.com/golang/freetype/testdata/make-other-hinting-txts.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/github.com/golang/freetype/testdata/make-other-hinting-txts.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github.com/golang/mock/ci/check_go_fmt.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/github.com/golang/mock/ci/check_go_fmt.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github.com/golang/mock/ci/check_go_generate.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/github.com/golang/mock/ci/check_go_generate.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github.com/golang/mock/ci/check_go_lint.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/github.com/golang/mock/ci/check_go_lint.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github.com/golang/mock/ci/check_go_mod.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/github.com/golang/mock/ci/check_go_mod.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github.com/golang/protobuf/regenerate.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/github.com/golang/protobuf/regenerate.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github.com/prometheus/procfs/scripts/check_license.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/github.com/prometheus/procfs/scripts/check_license.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github.com/prometheus/procfs/ttar" beforeDir="false" afterPath="$PROJECT_DIR$/src/github.com/prometheus/procfs/ttar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +59,13 @@
   </component>
   <component name="GOROOT" path="D:\program\go" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src/cloudChat" />
   </component>
-  <component name="ProjectId" id="1jBVkByeHPUotDKj6BCwgnJwBkz" />
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1Y3MmU8xdvgdt2wQYKn508lMwU0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="foldersAlwaysOnTop" value="false" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,38 +75,70 @@
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DaraCertProject" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="go.vendoring.notification.had.been.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/DaraCertProject" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\GOproject\src\blockChainProject\error" />
+      <recent name="D:\GOproject\src\work1\work3" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build blockChainProject">
-    <configuration name="go build BoltProject" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="BoltProject" />
+  <component name="RunManager" selected="Go Build.go build byts_work">
+    <configuration name="go build byts_work" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="GOproject" />
       <working_directory value="$PROJECT_DIR$/" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/main.go" />
-      <package value="BoltProject" />
+      <filePath value="$PROJECT_DIR$/src/byts_work/main.go" />
+      <package value="byts_work" />
+      <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build blockChainProject" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="BoltProject" />
+    <configuration name="go build firstBeegoProject" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="GOproject" />
       <working_directory value="$PROJECT_DIR$/" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/main.go" />
-      <package value="blockChainProject" />
+      <filePath value="$PROJECT_DIR$/src/firstBeegoProject/main.go" />
+      <package value="firstBeegoProject" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build work1" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="GOproject" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/src/work1/main.go" />
+      <package value="work1" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build work2" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="GOproject" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/src/work2/shiyon.go" />
+      <package value="work2" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build xiaoshuo.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="GOproject" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/src/work1/xiaoshuo.go" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build blockChainProject" />
-        <item itemvalue="Go Build.go build BoltProject" />
+        <item itemvalue="Go Build.go build byts_work" />
+        <item itemvalue="Go Build.go build firstBeegoProject" />
+        <item itemvalue="Go Build.go build work1" />
+        <item itemvalue="Go Build.go build work2" />
+        <item itemvalue="Go Build.go build xiaoshuo.go" />
       </list>
     </recent_temporary>
   </component>
@@ -72,33 +146,61 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="494" y="221" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603972651705">
+    <state x="549" y="171" key="FileChooserDialogImpl" timestamp="1603108218070">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="494" y="221" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1603972651705" />
-    <state x="707" y="201" key="FileChooserDialogImpl" timestamp="1603869778174">
+    <state x="549" y="171" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603108218070" />
+    <state width="1493" height="246" key="GridCell.Tab.0.bottom" timestamp="1603094181200">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="707" y="201" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603869778174" />
-    <state width="1493" height="214" key="GridCell.Tab.0.bottom" timestamp="1604234257130">
+    <state width="1493" height="246" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603094181200" />
+    <state width="1493" height="246" key="GridCell.Tab.0.center" timestamp="1603094181200">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="214" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604234257130" />
-    <state width="1493" height="214" key="GridCell.Tab.0.center" timestamp="1604234257130">
+    <state width="1493" height="246" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1603094181200" />
+    <state width="1493" height="246" key="GridCell.Tab.0.left" timestamp="1603094181200">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="214" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604234257130" />
-    <state width="1493" height="214" key="GridCell.Tab.0.left" timestamp="1604234257130">
+    <state width="1493" height="246" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1603094181200" />
+    <state width="1493" height="246" key="GridCell.Tab.0.right" timestamp="1603094181200">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="214" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604234257130" />
-    <state width="1493" height="214" key="GridCell.Tab.0.right" timestamp="1604234257130">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="214" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604234257130" />
-    <state x="-6" y="0" width="437" height="830" key="dock-window-1" timestamp="1603531395577">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="-6" y="0" width="437" height="830" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1603531395577" />
+    <state width="1493" height="246" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1603094181200" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$USER_HOME$/Desktop/第二学期作业/2.19/san.go</url>
+          <line>3</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/gocode/project01/20200220/si.go</url>
+          <line>3</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/work1/xiaoshuo.go</url>
+          <line>28</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$USER_HOME$/Desktop/6月2日/MovieSpider0602_优化/main.go</url>
+          <line>2</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/work1/xiaoshuo.go</url>
+          <line>69</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/work1/xiaoshuo.go</url>
+          <line>34</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

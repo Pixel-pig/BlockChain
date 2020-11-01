@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/BeeGoProjet_v1.0.0" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/BeegoProject" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/DaraCertProject" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/cloudChat" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/astaxie/beego" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/beego/bee" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/beorn7/perks" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/cespare/cp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/cespare/xxhash" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/davecgh/go-spew" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/flosch/pongo2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/garyburd/redigo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/go-sql-driver/mysql" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/golang/freetype" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/golang/lint" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/golang/mock" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/golang/protobuf" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/hashicorp/golang-lru" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/lib/pq" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/matttproud/golang_protobuf_extensions" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/pelletier/go-toml" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/prometheus/client_golang" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/prometheus/client_model" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/prometheus/common" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/prometheus/procfs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/shiena/ansicolor" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/golang.org/x/lint" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/google.golang.org/protobuf" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/gopkg.in/go-playground/validator.v8" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/gopkg.in/go-playground/validator.v9" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/gopkg.in/ini.v1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/gopkg.in/sourcemap.v1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/gopkg.in/telegram-bot-api.v4" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/gopkg.in/yaml.v2" vcs="Git" />
   </component>
 </project>
